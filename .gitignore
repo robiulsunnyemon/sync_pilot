@@ -5,3 +5,5 @@ build/
 pubspec.lock
 doc/api/
 coverage/
+config.bat
+node_modules

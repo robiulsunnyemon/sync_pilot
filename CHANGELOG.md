@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Added architecture diagram image (`assets/sync_architecture.png`) to `README.md` and `pubspec.yaml` screenshots.
+
 ## 0.1.1
 
 * Shortened `pubspec.yaml` package description to fit within the 60-180 character convention for full `pub.dev` score.
