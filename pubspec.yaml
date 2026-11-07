@@ -1,0 +1,26 @@
+name: sync_pilot
+description: >-
+  A database-agnostic, offline-first synchronization engine for Dart and Flutter
+  featuring smart outbox compaction, field-level conflict resolution, delta
+  sync, and exponential backoff retry.
+version: 0.1.0
+homepage: https://github.com/robiulsunnyemon/sync_pilot
+repository: https://github.com/robiulsunnyemon/sync_pilot
+issue_tracker: https://github.com/robiulsunnyemon/sync_pilot/issues
+topics:
+  - sync
+  - offline-first
+  - local-first
+  - database
+  - cache
+
+environment:
+  sdk: ^3.0.0
+
+# Zero external runtime dependencies for maximum compatibility across
+# Android, iOS, Web (WASM), Windows, macOS, Linux, and Dart Backend/CLI.
+dependencies: {}
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0

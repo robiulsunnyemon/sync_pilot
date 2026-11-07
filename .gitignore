@@ -1,0 +1,7 @@
+# Files and directories created by pub and dart tools.
+.dart_tool/
+.packages
+build/
+pubspec.lock
+doc/api/
+coverage/
