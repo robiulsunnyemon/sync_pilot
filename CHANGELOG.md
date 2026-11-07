@@ -1,3 +1,8 @@
+## 0.1.1
+
+* Shortened `pubspec.yaml` package description to fit within the 60-180 character convention for full `pub.dev` score.
+* Updated `lints` dev dependency constraint to support latest `6.x` releases.
+
 ## 0.1.0
 
 * Initial release of `sync_pilot`.
