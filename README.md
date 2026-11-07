@@ -62,43 +62,7 @@ Building a reliable offline-first application requires solving several subtle di
 
 ## Architecture and Sync Lifecycle
 
-```text
-+-----------------------------------------------------------------------+
-|                    Application / UI / State Layer                     |
-|               (Riverpod / Bloc / Provider / Signals)                  |
-+-------------------+-----------------------------------+---------------+
-                    |                                   ^
-   save() / create()|                                   | watchAll()
-   update() / delete|                                   | watchById()
-                    v                                   | statusStream
-+-------------------+-----------------------------------+---------------+
-|                          SyncPilotEngine<T>                           |
-|                                                                       |
-|  +---------------------------+         +---------------------------+  |
-|  |     LocalSyncStore<T>     |         |        OutboxQueue        |  |
-|  | (SQLite / Hive / Memory)  |         |   (Operation Compaction)  |  |
-|  +-------------+-------------+         +-------------+-------------+  |
-|                ^                                     |                |
-|                |        +-------------------+        |                |
-|                +------->+ Sync Cycle Runner +<-------+                |
-|                         |  1. Push Outbox   |                         |
-|                         |  2. Map Temp IDs  |                         |
-|                         |  3. Resolve 409s  |                         |
-|                         |  4. Pull Deltas   |                         |
-|                         +---------+---------+                         |
-|                                   |                                   |
-|  +---------------------------+    |    +---------------------------+  |
-|  |    ConflictResolver<T>    |<---+--->|        RetryPolicy        |  |
-|  |   (3-Way Field Merger)    |    |    | (Backoff + Equal Jitter)  |  |
-|  +---------------------------+    |    +---------------------------+  |
-+-----------------------------------+-----------------------------------+
-                                    |
-                                    v
-                    +---------------+---------------+
-                    |      RemoteSyncAdapter<T>     |
-                    |  (REST / GraphQL / Supabase)  |
-                    +-------------------------------+
-```
+![SyncPilotEngine Architecture Diagram](https://raw.githubusercontent.com/robiulsunnyemon/sync_pilot/main/assets/sync_architecture.png)
 
 ---
 

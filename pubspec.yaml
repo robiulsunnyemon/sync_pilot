@@ -2,7 +2,7 @@ name: sync_pilot
 description: >-
   Database-agnostic, offline-first sync engine for Dart and Flutter with
   outbox compaction, 3-way conflict resolution, and delta sync.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/robiulsunnyemon/sync_pilot
 repository: https://github.com/robiulsunnyemon/sync_pilot
 issue_tracker: https://github.com/robiulsunnyemon/sync_pilot/issues
@@ -12,6 +12,10 @@ topics:
   - local-first
   - database
   - cache
+
+screenshots:
+  - description: 'SyncPilotEngine architecture and synchronization lifecycle diagram.'
+    path: assets/sync_architecture.png
 
 environment:
   sdk: ^3.0.0
